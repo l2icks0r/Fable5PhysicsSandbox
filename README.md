@@ -545,10 +545,7 @@ each cost clarity, which is the one thing this codebase is trying to preserve.
 
 ## Credits and license
 
-Written by **Claude Fable 5** (Anthropic), directed and driven by the
-repository author across an extended collaborative session — every feature,
-bug fix, and design decision was steered interactively, and each change was
-verified in a live browser before moving on.
+The code was written by **Claude Fable 5** (Anthropic).
 
 No third-party code, assets, or libraries are used anywhere in the project.
 

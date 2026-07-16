@@ -1,6 +1,6 @@
 @echo off
-rem Fable 5 Physics Sandbox -- created by Claude Fable 5 (Anthropic), directed
-rem by the repository author. MIT License; see LICENSE and README.md.
+rem Fable 5 Physics Sandbox -- written by Claude Fable 5 (Anthropic).
+rem MIT License; see LICENSE and README.md.
 rem ==========================================================================
 rem Rebuild the WebAssembly physics engine after editing physics.cpp.
 rem

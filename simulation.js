@@ -1,6 +1,6 @@
 "use strict";
-// Fable 5 Physics Sandbox — created by Claude Fable 5 (Anthropic), directed by
-// the repository author. MIT License; see LICENSE and README.md.
+// Fable 5 Physics Sandbox — written by Claude Fable 5 (Anthropic).
+// MIT License; see LICENSE and README.md.
 // ===========================================================================
 // SIMULATION — physics, camera, input, and the main loop.
 //
