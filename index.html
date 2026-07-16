@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- Fable 5 Physics Sandbox — created by Claude Fable 5 (Anthropic), directed
+     by the repository author. MIT License; see LICENSE and README.md. -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fable 5 Physics Sandbox</title>
+    <!--
+        A real-time rigid-body physics sandbox with three interchangeable
+        renderers for the same scene:
+
+          simulation.js         physics, camera, input, main loop
+          renderer-software.js  CPU scanline rasterizer with a z-buffer
+          renderer-webgl.js     classic GPU pipeline (WebGL 2, instanced)
+          renderer-webgpu.js    modern explicit GPU API (WebGPU, WGSL)
+
+        Click the "gfx" button (or press R) to cycle renderers live.
+    -->
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background-color: black;
+        }
+        #view { position: fixed; inset: 0; }
+        #view canvas { display: block; }
+        #hud {
+            position: fixed;
+            top: 12px;
+            left: 14px;
+            color: #aaa;
+            font: 13px/1.6 monospace;
+            user-select: none;
+            pointer-events: none;
+        }
+        #buttons {
+            position: fixed;
+            bottom: 16px;
+            right: 16px;
+            display: flex;
+            gap: 10px;
+        }
+        #buttons button {
+            font: 14px monospace;
+            color: #ccc;
+            background: rgba(30, 30, 30, 0.8);
+            border: 1px solid #555;
+            border-radius: 8px;
+            padding: 12px 18px;
+            cursor: pointer;
+            user-select: none;
+            touch-action: manipulation;              /* no double-tap zoom delay */
+            -webkit-tap-highlight-color: transparent;
+        }
+        #buttons button:active {
+            background: rgba(70, 70, 70, 0.9);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="view"></div>
+    <div id="hud">click / hold space: drop bodies &nbsp;·&nbsp; shift + mouse: look &nbsp;·&nbsp; ctrl + mouse: orbit &nbsp;·&nbsp; WASD: move &nbsp;·&nbsp; arrows: pedestal + strafe<br>scroll / + −: zoom &nbsp;·&nbsp; B: bounce the floor &nbsp;·&nbsp; C: clear &nbsp;·&nbsp; R: renderer &nbsp;·&nbsp; T: shape &nbsp;·&nbsp; P: physics<br><span id="count"></span></div>
+    <div id="buttons">
+        <button id="bounceBtn" type="button">bounce</button>
+        <button id="clearBtn" type="button">clear</button>
+        <button id="shapeBtn" type="button">shape: cube</button>
+        <button id="physBtn" type="button">physics: JavaScript</button>
+        <button id="gfxBtn" type="button">renderer</button>
+        <button id="fullBtn" type="button">fullscreen</button>
+    </div>
+    <script src="renderer-software.js"></script>
+    <script src="renderer-webgl.js"></script>
+    <script src="renderer-webgpu.js"></script>
+    <script src="physics-wasm-bin.js"></script>
+    <script src="physics-wasm.js"></script>
+    <script src="simulation.js"></script>
+</body>
+</html>
